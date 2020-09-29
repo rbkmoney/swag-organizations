@@ -17,7 +17,7 @@ properties:
       email:
         $ref: '#/components/schemas/UserEmail'
   roles:
-    allOf:
+    x-rebillyMerge:
+      - $ref: '#/components/schemas/MemberRoleSet'
       - description: |
           Роли, которые будут назначены сотруднику после принятия им приглашения
-      - $ref: '#/components/schemas/MemberRoleSet'
