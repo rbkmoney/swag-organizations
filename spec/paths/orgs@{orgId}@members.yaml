@@ -25,4 +25,4 @@ get:
     '404':
       description: Организация не найдена
     '400':
-
+      $ref: '#/components/responses/BadRequest'
