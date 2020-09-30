@@ -1,6 +1,7 @@
 description: Приглашение для сотрудника
 type: object
-x-rebillyMerge:
+allOf:
+  - $ref: '#/components/schemas/InvitationStatus'
   - type: object
     required:
       - id
@@ -21,7 +22,7 @@ x-rebillyMerge:
       invitee:
         $ref: '#/components/schemas/Invitee'
       acceptToken:
-        x-rebillyMerge:
+        allOf:
           - $ref: '#/components/schemas/InvitationAcceptToken'
           - readOnly: true
       metadata:
@@ -31,4 +32,3 @@ x-rebillyMerge:
         type: object
         example:
           mailTemplate: 'v2.beta'
-  - $ref: '#/components/schemas/InvitationStatus'
