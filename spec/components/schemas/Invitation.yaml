@@ -31,3 +31,4 @@ allOf:
         type: object
         example:
           mailTemplate: 'v2.beta'
+  - $ref: '#/components/schemas/InvitationStatus'
