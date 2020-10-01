@@ -2,19 +2,13 @@
   "name": "rbkmoney-organizations-api",
   "version": "1.0.0",
   "dependencies": {
-    "@redocly/openapi-cli": "^0.12.7",
-    "redoc-cli": "^0.9.8",
-    "json-merge-patch": "^0.2.3",
-    "json-pointer": "^0.6.0",
-    "shelljs": "^0.7.0",
-    "swagger-ui-dist": "^3.18.3"
+    "@redocly/openapi-cli": "^1.0.0-beta.9",
+    "redoc-cli": "^0.9.8"
   },
   "private": true,
   "scripts": {
     "start": "openapi preview-docs",
-    "build": "node ./build.js",
-    "validate": "openapi validate",
-    "openapi": "openapi",
-    "redoc": "redoc-cli"
+    "build": "openapi bundle -o web_deploy/openapi",
+    "validate": "openapi validate"
   }
 }
