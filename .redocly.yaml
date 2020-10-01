@@ -1,20 +1,11 @@
 # See https://docs.redoc.ly/cli/configuration/ for more information.
 apiDefinitions:
-  binbase: "openapi/openapi.yaml"
+  core: "openapi/openapi.yaml"
 lint:
+  extends:
+    - recommended
   rules:
-    api-servers: on
-    camel-case-names: on
-    model-description: on
-    no-extra-fields: on
-    operation-operationId: on
-    operation-description: on
-    operation-tags: on
-    parameter-description: on
-    path-declarations-must-exist: on
-    path-keys-no-trailing-slash: on
-    server-not-example: on
-    servers-no-trailing-slash: on
+    tag-description: off
 referenceDocs:
   showConsole: true
   layout:
