@@ -4,7 +4,7 @@ TEMPLATES_PATH := .
 SERVICE_NAME := swag-organizations
 BUILD_IMAGE_TAG := 442c2c274c1d8e484e5213089906a4271641d95e
 
-CALL_ANYWHERE := all install validate
+CALL_ANYWHERE := all install validate build java.compile java.deploy
 CALL_W_CONTAINER := $(CALL_ANYWHERE)
 
 all: validate
