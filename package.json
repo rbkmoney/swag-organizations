@@ -9,6 +9,6 @@
   "scripts": {
     "start": "openapi preview-docs",
     "build": "openapi bundle -o web_deploy/openapi",
-    "validate": "openapi lint web_deploy/openapi.yaml"
+    "validate": "openapi lint"
   }
 }
