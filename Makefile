@@ -18,3 +18,79 @@ install:
 
 validate:
 	npm run validate
+
+build:
+	npm run build
+
+# Java
+
+ifdef SETTINGS_XML
+DOCKER_RUN_OPTS = -v $(SETTINGS_XML):$(SETTINGS_XML)
+DOCKER_RUN_OPTS += -e SETTINGS_XML=$(SETTINGS_XML)
+endif
+
+ifdef LOCAL_BUILD
+DOCKER_RUN_OPTS += -v $$HOME/.m2:/home/$(UNAME)/.m2:rw
+endif
+
+COMMIT_HASH := $(shell git --no-pager log -1 --pretty=format:"%h")
+NUMBER_COMMITS := $(shell git rev-list --count HEAD)
+
+JAVA_PKG_VERSION := 1.$(NUMBER_COMMITS)-$(COMMIT_HASH)
+
+ifdef BRANCH_NAME
+ifeq "$(findstring epic,$(BRANCH_NAME))" "epic"
+JAVA_PKG_VERSION := $(JAVA_PKG_VERSION)-epic
+endif
+endif
+
+MVN = mvn -s $(SETTINGS_XML) -Dcommit.number="$(NUMBER_COMMITS)"
+
+java.swag.compile_client:
+	$(if $(SETTINGS_XML),,echo "SETTINGS_XML not defined" ; exit 1)
+	$(MVN) clean && \
+	$(MVN) compile -P="client"
+
+java.swag.deploy_client:
+	$(if $(SETTINGS_XML),,echo "SETTINGS_XML not defined" ; exit 1)
+	$(MVN) clean && \
+	$(MVN) versions:set versions:commit -DnewVersion="$(JAVA_PKG_VERSION)-client" && \
+	$(MVN) deploy -P="client"
+
+java.swag.install_client:
+	$(if $(SETTINGS_XML),,echo "SETTINGS_XML not defined" ; exit 1)
+	$(MVN) clean && \
+    $(MVN) versions:set versions:commit -DnewVersion="$(JAVA_PKG_VERSION)-client" && \
+    $(MVN) install -P="client"
+
+java.swag.compile_server:
+	$(if $(SETTINGS_XML),,echo "SETTINGS_XML not defined" ; exit 1)
+	$(MVN) clean && \
+	$(MVN) compile -P="server"
+
+java.swag.deploy_server:
+	$(if $(SETTINGS_XML),,echo "SETTINGS_XML not defined" ; exit 1)
+	$(MVN) clean && \
+	$(MVN) versions:set versions:commit -DnewVersion="$(JAVA_PKG_VERSION)-server" && \
+	$(MVN) deploy -P="server"
+
+java.swag.install_server:
+	$(if $(SETTINGS_XML),,echo "SETTINGS_XML not defined" ; exit 1)
+	$(MVN) clean && \
+    $(MVN) versions:set versions:commit -DnewVersion="$(JAVA_PKG_VERSION)-server" && \
+    $(MVN) install -P="server"
+
+java.compile: java.settings
+	$(MVN) compile
+
+java.deploy: java.settings
+	$(MVN) versions:set versions:commit -DnewVersion="$(JAVA_PKG_VERSION)" && \
+	$(MVN) deploy
+
+java.install: java.settings
+	$(MVN) clean && \
+	$(MVN) versions:set versions:commit -DnewVersion="$(JAVA_PKG_VERSION)" && \
+	$(MVN) install
+
+java.settings:
+	$(if $(SETTINGS_XML),, echo "SETTINGS_XML not defined"; exit 1)
