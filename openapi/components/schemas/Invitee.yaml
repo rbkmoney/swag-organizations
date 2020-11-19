@@ -17,7 +17,6 @@ properties:
       email:
         $ref: './UserEmail.yaml'
   roles:
-    allOf:
-      - description: |
-          Роли, которые будут назначены сотруднику после принятия им приглашения
-      - $ref: './MemberRoleSet.yaml'
+    description: |
+      Роли, которые будут назначены сотруднику после принятия им приглашения
+    $ref: './MemberRoleSet.yaml'
