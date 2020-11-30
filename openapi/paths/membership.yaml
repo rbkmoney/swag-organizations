@@ -22,12 +22,7 @@ get:
       content:
         application/json:
           schema:
-            type: object
-            required:
-              - results
-            properties:
-              result:
-                $ref: '../components/responses/OrganizationPaginate.yaml'
+            $ref: '../components/responses/OrganizationSearchResult.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
 

@@ -1,7 +1,7 @@
 type: object
 required:
   - hasNext
-  - page
+  - offset
   - limit
   - organizations
 properties:
@@ -13,7 +13,7 @@ properties:
   limit:
     type: integer
     format: int32
-  organizations:
+  results:
     type: array
     items:
       $ref: '../schemas/Organization.yaml'
