@@ -3,7 +3,7 @@ required:
   - results
 properties:
   continuationToken:
-    type: string
+    $ref: '../schemas/ContinuationToken.yaml'
   results:
     type: array
     items:
