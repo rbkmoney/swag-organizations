@@ -1,0 +1,5 @@
+name: continuationToken
+in: query
+required: false
+schema:
+  $ref: '../schemas/ContinuationToken.yaml'
