@@ -1,0 +1,11 @@
+name: userId
+in: query
+description: Идентификатор пользователя
+required: true
+properties:
+  page:
+    type: integer
+    format: int32
+  limit:
+    type: integer
+    format: int32

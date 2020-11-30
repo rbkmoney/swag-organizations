@@ -5,6 +5,17 @@ get:
     - orgs
   parameters:
     - $ref: '../components/parameters/requestId.yaml'
+    - in: query
+      name: offset
+      required: true
+      schema:
+        type: integer
+        format: int64
+    - in: query
+      name: limit
+      schema:
+        type: integer
+        format: int32
   responses:
     '200':
       description: Найдены доступные организации
@@ -15,10 +26,8 @@ get:
             required:
               - results
             properties:
-              results:
-                type: array
-                items:
-                  $ref: '../components/schemas/Organization.yaml'
+              result:
+                $ref: '../components/responses/OrganizationPaginate.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
 
