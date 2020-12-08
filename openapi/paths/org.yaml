@@ -31,7 +31,7 @@ patch:
         schema:
           type: object
           properties:
-            orgName:
+            name:
               description: Название организации
               type: string
   responses:
@@ -43,3 +43,8 @@ patch:
             $ref: '../components/schemas/Organization.yaml'
     '400':
       $ref: '../components/responses/BadRequest.yaml'
+    '404':
+      description: Организация не найдена
+    '403':
+      description: Данные недоступны
+
