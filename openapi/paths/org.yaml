@@ -46,5 +46,4 @@ patch:
     '404':
       description: Организация не найдена
     '403':
-      description: Данные недоступны
-
+      description: Операция недоступна
