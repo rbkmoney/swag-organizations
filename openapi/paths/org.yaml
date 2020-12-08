@@ -17,3 +17,29 @@ get:
       description: Организация не найдена
     '400':
       $ref: '../components/responses/BadRequest.yaml'
+patch:
+  summary: Обновление значений организации
+  operationId: patchOrg
+  tags:
+    - orgs
+  parameters:
+    - $ref: '../components/parameters/requestId.yaml'
+    - $ref: '../components/parameters/orgId.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            orgName:
+              description: Название организации
+              type: string
+  responses:
+    '200':
+      description: Организация успешно обновлена
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Organization.yaml'
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
