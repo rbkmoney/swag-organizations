@@ -20,9 +20,9 @@ get:
           schema:
             type: object
             required:
-              - results
+              - result
             properties:
-              results:
+              result:
                 type: array
                 items:
                   $ref: '../components/schemas/Invitation.yaml'
