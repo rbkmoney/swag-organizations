@@ -12,14 +12,7 @@ get:
       content:
         application/json:
           schema:
-            type: object
-            required:
-              - result
-            properties:
-              result:
-                type: array
-                items:
-                  $ref: '../components/schemas/Member.yaml'
+            $ref: '../components/responses/MemberOrgListResult.yaml'
     '403':
       description: Данные недоступны
     '404':

@@ -18,14 +18,7 @@ get:
       content:
         application/json:
           schema:
-            type: object
-            required:
-              - result
-            properties:
-              result:
-                type: array
-                items:
-                  $ref: '../components/schemas/Invitation.yaml'
+            $ref: '../components/responses/invitationListResult.yaml'
     '403':
       description: Операция недоступна
     '404':
