@@ -1,12 +1,18 @@
 type: object
+required:
+  - status
+  - statusInfo
 discriminator:
-  propertyName: status
+  propertyName: statusInfo
   mapping:
     'Pending': './InvitationPending.yaml'
     'Accepted': './InvitationAccepted.yaml'
     'Expired': './InvitationExpired.yaml'
     'Revoked': './InvitationRevoked.yaml'
 properties:
-  status:
+  state:
     description: Статус приглашения
+    $ref: './InvitationStatusName.yaml'
+    readOnly: true
+  info:
     readOnly: true

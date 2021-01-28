@@ -4,8 +4,6 @@ required:
   - createdAt
   - expiresAt
 properties:
-  id:
-    $ref: './InvitationId.yaml'
   createdAt:
     description: Дата и время создания
     type: string
@@ -16,10 +14,10 @@ properties:
     type: string
     format: date-time
   invitee:
-    $ref: './Invitee.yaml'
+    $ref: '../schemas/Invitee.yaml'
   acceptToken:
     allOf:
-      - $ref: './InvitationAcceptToken.yaml'
+      - $ref: '../schemas/InvitationAcceptToken.yaml'
       - readOnly: true
   metadata:
     description: |
@@ -28,5 +26,4 @@ properties:
     type: object
     example:
       mailTemplate: 'v2.beta'
-  status:
-    $ref: './InvitationStatus.yaml'
+
