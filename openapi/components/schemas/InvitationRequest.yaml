@@ -4,19 +4,12 @@ required:
   - createdAt
   - expiresAt
 properties:
-  createdAt:
-    description: Дата и время создания
-    type: string
-    format: date-time
   expiresAt:
     description: Дата и время истечения срока принятия
     type: string
     format: date-time
   invitee:
     $ref: '../schemas/Invitee.yaml'
-  acceptToken:
-    allOf:
-      - $ref: '../schemas/InvitationAcceptToken.yaml'
   metadata:
     description: |
       Произвольный, специфичный для клиента API и непрозрачный для системы набор данных, ассоциированных с
