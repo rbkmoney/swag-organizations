@@ -41,7 +41,7 @@ post:
     content:
         application/json:
           schema:
-            $ref: '../components/requestBodies/InvitationRequest.yaml'
+            $ref: '../components/schemas/InvitationRequest.yaml'
   responses:
     '201':
       description: Приглашение сформировано

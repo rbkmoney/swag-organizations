@@ -8,7 +8,6 @@ properties:
     description: Дата и время создания
     type: string
     format: date-time
-    readOnly: true
   expiresAt:
     description: Дата и время истечения срока принятия
     type: string
@@ -18,7 +17,6 @@ properties:
   acceptToken:
     allOf:
       - $ref: '../schemas/InvitationAcceptToken.yaml'
-      - readOnly: true
   metadata:
     description: |
       Произвольный, специфичный для клиента API и непрозрачный для системы набор данных, ассоциированных с

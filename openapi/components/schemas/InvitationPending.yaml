@@ -1,4 +1,2 @@
-type: object
-properties:
-  invitationId:
-    $ref: './InvitationId.yaml'
+allOf:
+  - $ref: './Invitation.yaml'

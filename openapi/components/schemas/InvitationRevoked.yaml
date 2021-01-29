@@ -1,12 +1,12 @@
-type: object
-properties:
-  invitationId:
-    $ref: './InvitationId.yaml'
-  revokedAt:
-    description: Дата и время отзыва приглашения
-    type: string
-    format: date-time
-  reason:
-    description: Причина отзыва приглашения
-    type: string
-    maxLength: 1000
+allOf:
+  - $ref: './Invitation.yaml'
+  - type: object
+    properties:
+      revokedAt:
+        description: Дата и время отзыва приглашения
+        type: string
+        format: date-time
+      reason:
+        description: Причина отзыва приглашения
+        type: string
+        maxLength: 1000

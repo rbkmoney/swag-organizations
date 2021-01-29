@@ -3,6 +3,15 @@ required:
   - id
   - createdAt
   - expiresAt
+  - status
+  - invitee
+discriminator:
+  propertyName: status
+  mapping:
+    'Pending': './InvitationPending.yaml'
+    'Accepted': './InvitationAccepted.yaml'
+    'Expired': './InvitationExpired.yaml'
+    'Revoked': './InvitationRevoked.yaml'
 properties:
   id:
     $ref: './InvitationId.yaml'
@@ -29,4 +38,4 @@ properties:
     example:
       mailTemplate: 'v2.beta'
   status:
-    $ref: './InvitationStatus.yaml'
+    $ref: './InvitationStatusName.yaml'

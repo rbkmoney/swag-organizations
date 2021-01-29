@@ -1,16 +1,16 @@
-type: object
-properties:
-  invitationId:
-    $ref: './InvitationId.yaml'
-  acceptedAt:
-    description: Дата и время принятия приглашения
-    type: string
-    format: date-time
-  member:
-    description: Сотрудник организации, принявший приглашение
-    type: object
-    required:
-      - id
+allOf:
+  - $ref: './Invitation.yaml'
+  - type: object
     properties:
-      id:
-        $ref: './UserId.yaml'
+      acceptedAt:
+        description: Дата и время принятия приглашения
+        type: string
+        format: date-time
+      member:
+        description: Сотрудник организации, принявший приглашение
+        type: object
+        required:
+          - id
+        properties:
+          id:
+            $ref: './UserId.yaml'
