@@ -2,10 +2,6 @@ description: Приглашение для сотрудника
 required:
   - invitee
 properties:
-  expiresAt:
-    description: Дата и время истечения срока принятия
-    type: string
-    format: date-time
   invitee:
     $ref: '../schemas/Invitee.yaml'
   metadata:
