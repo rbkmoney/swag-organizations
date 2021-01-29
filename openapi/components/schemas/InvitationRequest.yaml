@@ -1,8 +1,6 @@
 description: Приглашение для сотрудника
 required:
-  - id
-  - createdAt
-  - expiresAt
+  - invitee
 properties:
   expiresAt:
     description: Дата и время истечения срока принятия
