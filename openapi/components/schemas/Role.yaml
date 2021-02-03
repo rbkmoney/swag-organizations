@@ -15,6 +15,5 @@ properties:
   scopes:
     description: Возможные области действия для роли
     type: array
-    uniqueItems: true
     items:
       $ref: './ResourceScopeId.yaml'
