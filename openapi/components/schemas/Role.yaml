@@ -15,5 +15,7 @@ properties:
   scopes:
     description: Возможные области действия для роли
     type: array
+#    OpenAPI Generator 5 под TypeScript создает Set'ы которые в реальности не возвращает и так же не принимает
+#    uniqueItems: true
     items:
       $ref: './ResourceScopeId.yaml'

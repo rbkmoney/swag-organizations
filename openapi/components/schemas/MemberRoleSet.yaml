@@ -1,5 +1,7 @@
 description: Набор ролей сотрудника
 type: array
 minItems: 1
+#OpenAPI Generator 5 под TypeScript создает Set'ы которые в реальности не возвращает и так же не принимает
+#uniqueItems: true
 items:
   $ref: './MemberRole.yaml'
