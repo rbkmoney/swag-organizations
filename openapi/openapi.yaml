@@ -44,7 +44,7 @@ paths:
     $ref: ./paths/members.yaml
   /orgs/{orgId}/members/{userId}:
     $ref: ./paths/member.yaml
-  /orgs/{orgId}/members/{userId}/roles:
+  /orgs/{orgId}/members/{userId}/roles/{memberRoleId}:
     $ref: ./paths/memberRoles.yaml
   /orgs/{orgId}/invitations:
     $ref: ./paths/invitations.yaml

@@ -1,0 +1,6 @@
+description: Идентификатор роли пользователя в организации
+type: string
+minLength: 1
+maxLength: 40
+example: '05ab0300-c8dd-4274-b722-32ecfe48b5c0'
+readOnly: true

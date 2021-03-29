@@ -3,6 +3,8 @@ type: object
 required:
   - roleId
 properties:
+  id:
+    $ref: './MemberRoleId.yaml'
   roleId:
     $ref: './RoleId.yaml'
   scope:

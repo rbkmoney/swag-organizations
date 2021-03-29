@@ -49,11 +49,7 @@ delete:
     - $ref: '../components/parameters/requestId.yaml'
     - $ref: '../components/parameters/orgId.yaml'
     - $ref: '../components/parameters/userId.yaml'
-  requestBody:
-    content:
-      application/json:
-        schema:
-          $ref: '../components/schemas/MemberRole.yaml'
+    - $ref: '../components/parameters/memberRoleId.yaml'
   responses:
     '204':
       description: Сотрудник более не обладает указанной ролью

@@ -1,0 +1,6 @@
+name: memberRoleId
+in: path
+description: Идентификатор роли пользователя в организации
+required: true
+schema:
+  $ref: '../schemas/MemberRoleId.yaml'
