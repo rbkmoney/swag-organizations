@@ -1,6 +1,7 @@
 description: Роль сотрудника в организации
 type: object
 required:
+  - id
   - roleId
 properties:
   id:

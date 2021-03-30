@@ -20,8 +20,6 @@ post:
           schema:
             $ref: '../components/schemas/MemberRole.yaml'
     '422':
-      # TODO
-      # Может упростить пока и не энфорсить это требование на API?
       description: Невозможно совершить операцию
       content:
         application/json:
