@@ -1,4 +1,4 @@
-put:
+post:
   summary: Назначить сотруднику роль
   operationId: assignMemberRole
   tags:
@@ -13,10 +13,12 @@ put:
         schema:
           $ref: '../components/schemas/MemberRole.yaml'
   responses:
-    # TODO
-    # Нужно ли возвращать получившийся набор ролей?
-    '204':
+    '201':
       description: Роль назначена
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/MemberRole.yaml'
     '422':
       # TODO
       # Может упростить пока и не энфорсить это требование на API?
@@ -29,7 +31,7 @@ put:
               code:
                 type: string
                 enum:
-                  - onlyRoleLeft
+                  - invalidRole
               message:
                 description: Человекочитаемое описание ошибки
                 type: string

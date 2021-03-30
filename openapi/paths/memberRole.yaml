@@ -21,7 +21,7 @@ delete:
               code:
                 type: string
                 enum:
-                  - invalidRole
+                  - onlyRoleLeft
               message:
                 description: Человекочитаемое описание ошибки
                 type: string
