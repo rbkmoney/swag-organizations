@@ -1,0 +1,6 @@
+type: object
+required:
+  - organizationId
+properties:
+  organizationId:
+    $ref: '../schemas/OrganizationId.yaml'

@@ -1,0 +1,19 @@
+post:
+  summary: Переключить активную организацию
+  operationId: switchContext
+  tags:
+    - orgs
+  parameters:
+    - $ref: '../components/parameters/requestId.yaml'
+    - $ref: '../components/parameters/orgId.yaml'
+  responses:
+    '200':
+      description: Огранизация успешно переключена
+    '403':
+      description: Операция недоступна
+    '404':
+      description: Организация не найдена
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+
+
