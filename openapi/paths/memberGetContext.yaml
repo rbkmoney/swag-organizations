@@ -12,7 +12,7 @@ get:
         application/json:
           schema:
             $ref: '../components/responses/MemberContext.yaml'
-      '403':
-        description: Данные недоступны
-      '400':
-        $ref: '../components/responses/BadRequest.yaml'
+    '403':
+      description: Данные недоступны
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'

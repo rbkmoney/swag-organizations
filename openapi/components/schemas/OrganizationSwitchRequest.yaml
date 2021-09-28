@@ -1,0 +1,10 @@
+type: object
+required:
+  - organizationId
+properties:
+  organizationId:
+    description: Идентификатор организации
+    type: string
+    minLength: 1
+    maxLength: 40
+    example: or_af9e76uc5b47h8b154.19b8xa61dc94

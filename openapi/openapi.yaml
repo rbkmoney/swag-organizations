@@ -34,7 +34,7 @@ paths:
     $ref: ./paths/orgMembership.yaml
   /user/context/switch_context:
     $ref: ./paths/memberSwitchContext.yaml
-  /user/context/:
+  /user/context:
     $ref: ./paths/memberGetContext.yaml
   /orgs:
     $ref: ./paths/orgs.yaml

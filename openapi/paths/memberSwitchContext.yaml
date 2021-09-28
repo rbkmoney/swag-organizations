@@ -5,7 +5,11 @@ post:
     - orgs
   parameters:
     - $ref: '../components/parameters/requestId.yaml'
-    - $ref: '../components/parameters/orgId.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/OrganizationSwitchRequest.yaml'
   responses:
     '200':
       description: Огранизация успешно переключена
