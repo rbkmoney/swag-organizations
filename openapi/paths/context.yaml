@@ -1,0 +1,39 @@
+get:
+  summary: Получить активную организацию
+  operationId: getContext
+  tags:
+    - orgs
+  parameters:
+    - $ref: '../components/parameters/requestId.yaml'
+  responses:
+    '200':
+      description: Контекст пользователя
+      content:
+        application/json:
+          schema:
+            $ref: '../components/responses/MemberContext.yaml'
+    '403':
+      description: Данные недоступны
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
+post:
+  summary: Переключить активную организацию
+  operationId: switchContext
+  tags:
+    - orgs
+  parameters:
+    - $ref: '../components/parameters/requestId.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/OrganizationSwitchRequest.yaml'
+  responses:
+    '200':
+      description: Огранизация успешно переключена
+    '403':
+      description: Операция недоступна
+    '404':
+      description: Организация не найдена
+    '400':
+      $ref: '../components/responses/BadRequest.yaml'
