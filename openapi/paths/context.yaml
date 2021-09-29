@@ -16,7 +16,7 @@ get:
       description: Данные недоступны
     '400':
       $ref: '../components/responses/BadRequest.yaml'
-post:
+put:
   summary: Переключить активную организацию
   operationId: switchContext
   tags:
@@ -29,7 +29,7 @@ post:
         schema:
           $ref: '../components/schemas/OrganizationSwitchRequest.yaml'
   responses:
-    '200':
+    '204':
       description: Огранизация успешно переключена
     '403':
       description: Операция недоступна
